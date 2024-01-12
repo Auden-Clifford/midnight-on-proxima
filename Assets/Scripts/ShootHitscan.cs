@@ -8,6 +8,7 @@ public class ShootHitscan : MonoBehaviour
     [SerializeField] private float force;
     [SerializeField] private float maxDistance;
     [SerializeField] private LineRenderer lineRenderer;
+    [SerializeField] private GameObject impactEffect;
 
    public void Fire()
    {
@@ -23,10 +24,19 @@ public class ShootHitscan : MonoBehaviour
                 // add force to the hit object
                 targetRigidbody.AddForceAtPosition(rayOriginPoint.forward * force, hit.point, ForceMode.Impulse);
             }
-        }
 
-        // draw the bullet trail
-        StartCoroutine(DrawShot(rayOriginPoint.position, hit.point));
+            // draw the bullet trail to the point hit
+            StartCoroutine(DrawShot(rayOriginPoint.position, hit.point));
+
+            // instantiate an impact effect at point of impact
+            Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+
+        }
+        // if nothing was hit draw a bullet trail to the max distance
+        else
+        {
+            StartCoroutine(DrawShot(rayOriginPoint.position, rayOriginPoint.position + rayOriginPoint.forward * maxDistance));
+        }
    }
 
     private IEnumerator DrawShot(Vector3 start, Vector3 end)
@@ -36,7 +46,7 @@ public class ShootHitscan : MonoBehaviour
         lineRenderer.enabled = true;
 
         // wait a short time then hide again
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.01f);
 
         lineRenderer.enabled = false;
     }

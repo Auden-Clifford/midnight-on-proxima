@@ -571,6 +571,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Dreadnaught_low
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4b0d90d1452a12847aa853cc16bc16d2, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -888,6 +892,7 @@ MonoBehaviour:
   force: 50
   maxDistance: 100
   lineRenderer: {fileID: 433535198}
+  impactEffect: {fileID: 2822644681858945964, guid: aa996b3a89d984248b7b8b35a439a541, type: 3}
 --- !u!120 &433535198
 LineRenderer:
   serializedVersion: 2
@@ -961,16 +966,16 @@ LineRenderer:
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 21395
-      ctime1: 56090
-      ctime2: 56090
+      ctime0: 36623
+      ctime1: 62066
+      ctime2: 63993
       ctime3: 0
       ctime4: 0
       ctime5: 0
       ctime6: 0
       ctime7: 0
       atime0: 5783
-      atime1: 51079
+      atime1: 42020
       atime2: 51079
       atime3: 0
       atime4: 0
@@ -1332,7 +1337,7 @@ GameObject:
   - component: {fileID: 691445554}
   - component: {fileID: 691445558}
   - component: {fileID: 691445561}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: XR Origin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4230,7 +4235,7 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
@@ -4500,7 +4505,7 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
