@@ -8,6 +8,11 @@ public class XRGrabInteractableTwoAttach : XRGrabInteractable
     [SerializeField] private Transform leftAttachTransform;
     [SerializeField] private Transform rightAttachTransform;
 
+    /// <summary>
+    /// Allosw the object to use different attach points based on which hand is grabbing it
+    /// </summary>
+    /// <param name="interactor"></param>
+    /// <returns></returns>
     public override Transform GetAttachTransform(IXRInteractor interactor)
     {
         Transform i_attachTransform = null;
@@ -21,23 +26,5 @@ public class XRGrabInteractableTwoAttach : XRGrabInteractable
             i_attachTransform = rightAttachTransform;
         }
         return i_attachTransform != null ? i_attachTransform : base.GetAttachTransform(interactor);
-    }
-
-    /// <summary>
-    /// Allows different attach transforms for each hand
-    /// </summary>
-    /// <param name="args"></param>
-    protected override void OnSelectEntered(SelectEnterEventArgs args)
-    {
-        if (args.interactorObject.transform.CompareTag("Left Hand"))
-        {
-            attachTransform = leftAttachTransform;
-        }
-        else if(args.interactorObject.transform.CompareTag("Right Hand"))
-        {
-            attachTransform = rightAttachTransform;
-        }
-
-        base.OnSelectEntered(args);
     }
 }
