@@ -46,6 +46,3 @@
  - **Losing:** If a player misses loan installments, they lose credit score, if credit score drops below a certain threshold the company "lets the player go" and kills them, forcing them to try again from square one.
  - **End:** The game is meant to be continuous, with a game that can be endlessly repeated
  - **Why is this fun:** fighting for your life under corporate oppression while goofing around with friends in the metaphorical trenches is a compelling feeling, and I'm hoping to capture that feeling in gameplay. The ultimate goal of the game will not be to eventually pay off your debt, or even to survive forever under the company. The goal is to get as far as possible and have as much fun as possible before starting a fresh run and trying again. There will also be certain items, like decorations and cosmetics for the player and the station that are kept after a game over, allowing players to keep a sense of cumulative accomplishment.
-
-
-
