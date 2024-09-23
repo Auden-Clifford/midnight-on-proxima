@@ -41,7 +41,12 @@ public class Salvage : MonoBehaviour
     public void SpecialDeselect(SelectExitEventArgs args)
     {
         print("release");
-        //args.interactor.EndManualInteraction();
+        args.interactor.EndManualInteraction();
+    }
+
+    public void TriggerTest()
+    {
+        print("pew pew");
     }
     */
 }

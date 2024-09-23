@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class InventoryStack: MonoBehaviour
 {
-    public Stack<GameObject> items;
+    private Stack<GameObject> items;
+    [SerializeField] private XRInteractionManager interactionManager;
 
     // Start is called before the first frame update
     void Start()
     {
         items = new Stack<GameObject>();
+        interactionManager = FindFirstObjectByType<XRInteractionManager>();
     }
 
 
@@ -51,12 +54,15 @@ public class InventoryStack: MonoBehaviour
 
     public void RemoveItem(SelectEnterEventArgs args)
     {
+        //unselect the backpack
+        interactionManager.SelectExit(args.interactor, args.interactable);
         print("selected backpack");
         if(items.Count > 0)
         {
             GameObject item = items.Pop();
             item.SetActive(true);
-            args.interactor.StartManualInteraction(item.GetComponent<XRGrabInteractable>());
+            interactionManager.SelectEnter(args.interactor, item.GetComponent<XRGrabInteractable>());
+            //args.interactor.StartManualInteraction(item.GetComponent<XRGrabInteractable>());
         }
     }
 }
