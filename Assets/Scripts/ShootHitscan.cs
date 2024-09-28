@@ -14,7 +14,7 @@ public class ShootHitscan : MonoBehaviour
    {
         RaycastHit hit;
 
-        // cast a ray and chanc for a hit
+        // cast a ray and check for a hit
         if(Physics.Raycast(rayOriginPoint.position, rayOriginPoint.forward, out hit, maxDistance))
         {
             // check if threre is a rigidbody component
